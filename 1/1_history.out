@@ -1,0 +1,23 @@
+    1  dnf update
+    2  dnf update -y
+    3  dnf install nmtui
+    4  nmtui
+    5  hostname
+    6  cat /etc/hosts
+    7  cat /etc/hostname
+    8  systemctl nano /etc/hosts
+    9  dnf install nano
+   10  nano /etc/hosts
+   11  ping -4 8.8.8.8
+   12  ping -c4 8.8.8.8
+   13  nslookup ya.ru
+   14  mkdir 1
+   15  cd 1
+   16  ping -c4 8.8.8.8 > ping.out
+   17  cat ping.out 
+   18  echo 'task 2'
+   19  3
+   20  2
+   21  2.1
+   22  history
+   23  history > 1_history.out

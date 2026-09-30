@@ -1,0 +1,198 @@
+    1  dnf update
+    2  dnf update -y
+    3  dnf install nmtui
+    4  nmtui
+    5  hostname
+    6  cat /etc/hosts
+    7  cat /etc/hostname
+    8  systemctl nano /etc/hosts
+    9  dnf install nano
+   10  nano /etc/hosts
+   11  ping -4 8.8.8.8
+   12  ping -c4 8.8.8.8
+   13  nslookup ya.ru
+   14  mkdir 1
+   15  cd 1
+   16  ping -c4 8.8.8.8 > ping.out
+   17  cat ping.out 
+   18  echo 'task 2'
+   19  3
+   20  2
+   21  2.1
+   22  history
+   23  history > 1_history.out
+   24  cd ..
+   25  mkdir 2
+   26  cd 2
+   27  2.1
+   28  dnf update
+   29  2.2
+   30  dnf search nginx
+   31  dnf search  libcap-ng-utils
+   32  dnf install nginx libcap-ng-utils
+   33  dnf install nginx libcap-ng-utils
+   34  dnf install nginx libcap-ng-utils
+   35  2.3
+   36  dnf search tcpdump
+   37  dnf download tcpdump
+   38  dnf install ./tcpdump-4.99.5-1.red80.x86_64.rpm 
+   39  dnf purge tcpdump
+   40  dnf remove tcpdump
+   41  ls
+   42  rm -r tcp*
+   43  ls
+   44  dnf download tcpdump /tpm
+   45  man dnf
+   46  dnf download --destdir=/tmp tcpdump
+   47  ls /tmp
+   48  dnf install ./tmp/tcpdump-4.99.5-1.red80.x86_64.rpm
+   49  dnf install /tmp/tcpdump-4.99.5-1.red80.x86_64.rpm
+   50  tcpdump -nni any
+   51  history
+   52  history > 2_history.out
+   53  dnf remove tcpdump
+   54  rpm -ivh /tmp/tcpdump-4.99.5-1.red80.x86_64.rpm
+   55  tcpdump -h
+   56  dnf history > dnf.out
+   57  cat dnf.out 
+   58  ls
+   59  history > 2_history.out
+   60  cat 2_history.out 
+   61  cd ..
+   62  mkdir 3
+   63  cd 3
+   64  echo 'тут я делаю паузу т.к. пора спать.'
+   65  nano /root/.bashrc
+   66  cd ../2
+   67  history > 2_history.out
+   68  cat 2_history.out 
+   69  echo 'возможно, история команд не сохранится'
+   70  cat 2_history.out 
+   71  history > 2_history.out
+   72  cat 2_history.out 
+   73  cd ../3
+   74  nano /root/.bashrc
+   75  reboot
+   76  history
+   77  nano /root/.bashrc
+   78  pwd
+   79  history
+   80  exit
+   81  history
+   82  lsblk
+   83  history
+   84  ls
+   85  cd 3
+   86  ls
+   87  fdisk /dev/sdb
+   88  fdisk /dev/sdb
+   89  3
+   90  mkfs.ext4 -L MEPHI_WEB /dev/sdb1
+   91  mkdir -p /mephi-web
+   92  cat /etc/fstab
+   93  nano /etc/fstab
+   94  sudo mount /mephi-web
+   95  nano /etc/fstab
+   96  nano /etc/fstab
+   97  sudo mount /mephi-web
+   98  systemctl daemon-reload
+   99  lsblk
+  100  df -h /mephi-web
+  101  history > 3_history.out
+  102  cat 3_history.out 
+  103  cd ..
+  104  ls
+  105  mkdir 4
+  106  cd 4
+  107  4
+  108  systemctl status nginx
+  109  systemctl enable nginx
+  110  systemctl status nginx
+  111  systemctl start nginx
+  112  systemctl status nginx
+  113  netstat -plunta|grep nginx
+  114  journalctl -u nginx -b 0
+  115  journalctl -u nginx -b 0
+  116  journalctl -u nginx -b 0 > journalctl.out
+  117  ды
+  118  ls
+  119  cat journalctl.out 
+  120  history > 4_history.out
+  121  cd ..
+  122  mkdir 5
+  123  cd 5
+  124  5
+  125  sudo mkdir -p /data/mephi-2026
+  126  sudo groupadd -g 4444 curators
+  127  useradd -u 5501 -m user1
+  128  useradd -u 5502 -m user1
+  129  useradd -u 5502 -m user2
+  130  useradd -u 5503 -m user3
+  131  useradd -m -g curators curator1
+  132  useradd -m -g curators curator2
+  133  cat /etc/group
+  134  cat /etc/passwd
+  135  cat /etc/group
+  136  usermod -aG curator1 curators
+  137  usermod -aG curators curator1
+  138  cat /etc/group
+  139  usermod -aG curators curator2
+  140  groupadd mephidev
+  141  usermod -aG mephidev user1
+  142  usermod -aG mephidev user2
+  143  usermod -aG mephidev user3
+  144  cat /etc/group|grep mephidev
+  145  chown -R root:mephidev /data/mephi-2026
+  146  chmod 2770 /data/mephi-2026
+  147  ls -alh /data/mephi-2026/
+  148  ls -alh /data
+  149  setfacl -m g:curators:r-x /data/mephi-2026
+  150  setfacl -d -m g:mephidev:rwx /data/mephi-2026
+  151  setfacl -d -m g:curators:r-x /data/mephi-2026
+  152  echo 'далее будет проверка настроек'
+  153  5.2
+  154  chmod u+s /usr/sbin/tcpdump
+  155  su -u student tcpdump
+  156  sudo -u user1 tcpdump
+  157  5.3
+  158  getenforce
+  159  semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  160  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  161  whereis semanage
+  162  whereis semanage
+  163  dnf install policycoreutils-python-utils
+  164  dnf install policycoreutils-python-utils
+  165  whereis semanage
+  166  semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  167  restorecon -R -v /mephi-web
+  168  nano /etc/nginx/nginx.conf
+  169  nginx -t
+  170  systemctl restart nginx
+  171  systemctl status nginx
+  172  cd /mephi-web/
+  173  nano index.html
+  174  nano index.html
+  175  cazt index.html 
+  176  cat index.html 
+  177  curl http://localhost/ 
+  178  cd /home/student/
+  179  ls
+  180  cd 5
+  181  ls
+  182  6
+  183  history > 5_history.out
+  184  cat 5_history.out 
+  185  cd ..
+  186  mkdir 6
+  187  cd 6
+  188  6
+  189  usermod -s /sbin/nologin curator1
+  190  usermod -s /sbin/nologin curator2
+  191  chage -M 90 user1
+  192  chage -M 90 user2
+  193  chage -M 90 user3
+  194  chage -M 90 curator1
+  195  chage -M 90 curator2
+  196  nano /etc/login.defs 
+  197  nano /etc/login.defs 
+  198  history > 6_history.out
